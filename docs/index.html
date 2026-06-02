@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Data Quality Auditor</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+        .hero { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-bottom: 1px solid #334155; padding: 3rem 2rem; text-align: center; }
+        .hero h1 { font-size: 2.2rem; font-weight: 700; color: #f8fafc; margin-bottom: 0.5rem; }
+        .hero p { font-size: 1.1rem; color: #94a3b8; max-width: 700px; margin: 0 auto; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.2rem; margin: 2rem 0; }
+        .stat-card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 1.5rem; text-align: center; }
+        .stat-card .number { font-size: 2rem; font-weight: 700; }
+        .stat-card .number.green { color: #4ade80; }
+        .stat-card .number.blue { color: #38bdf8; }
+        .stat-card .number.amber { color: #fbbf24; }
+        .stat-card .number.purple { color: #a78bfa; }
+        .stat-card .label { font-size: 0.85rem; color: #94a3b8; margin-top: 0.3rem; }
+        .section { margin: 2.5rem 0; }
+        .section h2 { font-size: 1.4rem; font-weight: 600; color: #f8fafc; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #a78bfa; display: inline-block; }
+        .score-card { background: linear-gradient(135deg, #1e293b, #1a1f3a); border: 1px solid #334155; border-radius: 16px; padding: 2rem; text-align: center; margin: 2rem 0; }
+        .score-ring { width: 140px; height: 140px; border-radius: 50%; border: 8px solid #1e293b; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; position: relative; }
+        .score-ring::before { content: ''; position: absolute; inset: -8px; border-radius: 50%; border: 8px solid transparent; border-top-color: #a78bfa; border-right-color: #a78bfa; border-bottom-color: #a78bfa; transform: rotate(30deg); }
+        .score-ring .score { font-size: 2.5rem; font-weight: 700; color: #a78bfa; }
+        .score-ring .score span { font-size: 1.2rem; color: #64748b; }
+        .score-details { display: flex; justify-content: center; gap: 2rem; margin-top: 1rem; flex-wrap: wrap; }
+        .score-detail { text-align: center; }
+        .score-detail .val { font-size: 1.2rem; font-weight: 600; color: #f8fafc; }
+        .score-detail .lbl { font-size: 0.8rem; color: #64748b; }
+        .pipeline-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .step { background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 1.2rem 1.5rem; }
+        .step-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem; }
+        .step-num { background: #a78bfa; color: #0f172a; font-weight: 700; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; }
+        .step h3 { font-size: 0.95rem; color: #f8fafc; }
+        .step p { font-size: 0.85rem; color: #94a3b8; }
+        .issues-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .issue-card { background: #1e293b; border-left: 4px solid; border-radius: 0 10px 10px 0; padding: 1rem 1.2rem; }
+        .issue-card.high { border-left-color: #f87171; }
+        .issue-card.medium { border-left-color: #fbbf24; }
+        .issue-card.low { border-left-color: #4ade80; }
+        .issue-type { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; margin-bottom: 0.3rem; }
+        .issue-card.high .issue-type { color: #f87171; }
+        .issue-card.medium .issue-type { color: #fbbf24; }
+        .issue-card.low .issue-type { color: #4ade80; }
+        .issue-col { font-size: 1rem; color: #f8fafc; font-weight: 500; }
+        .issue-detail { font-size: 0.85rem; color: #94a3b8; margin-top: 0.3rem; }
+        .issue-fix { font-size: 0.8rem; color: #a78bfa; margin-top: 0.4rem; }
+        .before-after { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: center; margin-top: 1rem; }
+        .ba-card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 1.5rem; text-align: center; }
+        .ba-card h3 { font-size: 0.85rem; color: #64748b; text-transform: uppercase; margin-bottom: 0.8rem; }
+        .ba-val { font-size: 1.8rem; font-weight: 700; }
+        .ba-card.before .ba-val { color: #f87171; }
+        .ba-card.after .ba-val { color: #4ade80; }
+        .arrow { font-size: 2rem; color: #a78bfa; }
+        .fixes-list { margin-top: 1rem; }
+        .fix-item { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 0.8rem 1.2rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.8rem; font-size: 0.9rem; }
+        .fix-check { color: #4ade80; font-size: 1.2rem; }
+        .tech-stack { display: flex; gap: 0.8rem; margin-top: 1rem; flex-wrap: wrap; }
+        .tech { background: #a78bfa10; border: 1px solid #a78bfa30; padding: 0.4rem 1rem; border-radius: 8px; font-size: 0.85rem; color: #a78bfa; font-weight: 500; }
+        .footer { text-align: center; padding: 2rem; color: #475569; font-size: 0.85rem; border-top: 1px solid #1e293b; margin-top: 2rem; }
+        .footer a { color: #a78bfa; text-decoration: none; }
+        @media (max-width: 600px) { .hero h1 { font-size: 1.6rem; } .before-after { grid-template-columns: 1fr; } .arrow { transform: rotate(90deg); text-align: center; } }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>AI-Powered Data Quality Auditor</h1>
+        <p>Automatically detects, categorizes, and fixes data quality issues using ML-based NLP techniques. TF-IDF semantic analysis and fuzzy matching -- no paid APIs.</p>
+    </div>
+
+    <div class="container">
+        <div class="score-card">
+            <div class="score-ring">
+                <div class="score">7.8<span>/10</span></div>
+            </div>
+            <p style="color:#94a3b8;">Data Quality Score</p>
+            <div class="score-details">
+                <div class="score-detail"><div class="val">95.7%</div><div class="lbl">Completeness</div></div>
+                <div class="score-detail"><div class="val">12</div><div class="lbl">Issues Found</div></div>
+                <div class="score-detail"><div class="val">2</div><div class="lbl">High Severity</div></div>
+                <div class="score-detail"><div class="val">100%</div><div class="lbl">Null Reduction</div></div>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card"><div class="number blue">8,388</div><div class="label">Rows Analyzed</div></div>
+            <div class="stat-card"><div class="number purple">18</div><div class="label">Columns</div></div>
+            <div class="stat-card"><div class="number amber">6</div><div class="label">Issue Categories</div></div>
+            <div class="stat-card"><div class="number green">7</div><div class="label">Auto-Fixes Applied</div></div>
+        </div>
+
+        <div class="section">
+            <h2>Pipeline</h2>
+            <div class="pipeline-steps">
+                <div class="step">
+                    <div class="step-header"><div class="step-num">1</div><h3>Data Profiling</h3></div>
+                    <p>Merge customers + transactions datasets. Profile each column: types, null rates, unique counts, statistics.</p>
+                </div>
+                <div class="step">
+                    <div class="step-header"><div class="step-num">2</div><h3>Rule-Based Checks</h3></div>
+                    <p>Missing values, type mismatches, outliers (IQR), format inconsistencies, duplicate rows, email validation, negative prices.</p>
+                </div>
+                <div class="step">
+                    <div class="step-header"><div class="step-num">3</div><h3>ML-Assisted Checks</h3></div>
+                    <p>TF-IDF + cosine similarity for semantic duplicates. Fuzzy matching (rapidfuzz) for naming inconsistencies in categorical columns.</p>
+                </div>
+                <div class="step">
+                    <div class="step-header"><div class="step-num">4</div><h3>Auto-Fix &amp; Report</h3></div>
+                    <p>Apply fixes (imputation, clipping, dedup, case standardization). Generate before/after comparison and audit report.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Issues Detected</h2>
+            <div class="issues-grid">
+                <div class="issue-card high">
+                    <div class="issue-type">MISSING - HIGH</div>
+                    <div class="issue-col">review_text</div>
+                    <div class="issue-detail">5,031 missing values (60.0%)</div>
+                    <div class="issue-fix">Fix: impute with mode</div>
+                </div>
+                <div class="issue-card high">
+                    <div class="issue-type">OUTLIER - HIGH</div>
+                    <div class="issue-col">phone_number</div>
+                    <div class="issue-detail">1,843 outliers (22.0%)</div>
+                    <div class="issue-fix">Fix: clip to IQR bounds</div>
+                </div>
+                <div class="issue-card medium">
+                    <div class="issue-type">AI_NAMING - MEDIUM</div>
+                    <div class="issue-col">payment_method</div>
+                    <div class="issue-detail">Naming inconsistency groups detected via fuzzy matching</div>
+                    <div class="issue-fix">Fix: standardize similar names</div>
+                </div>
+                <div class="issue-card medium">
+                    <div class="issue-type">AI_SEMANTIC_DUPLICATE - MEDIUM</div>
+                    <div class="issue-col">transaction_date</div>
+                    <div class="issue-detail">192 semantically similar value pairs via TF-IDF</div>
+                    <div class="issue-fix">Fix: review and merge</div>
+                </div>
+                <div class="issue-card medium">
+                    <div class="issue-type">DUPLICATE - MEDIUM</div>
+                    <div class="issue-col">All rows</div>
+                    <div class="issue-detail">189 exact duplicate rows (2.3%)</div>
+                    <div class="issue-fix">Fix: drop duplicates</div>
+                </div>
+                <div class="issue-card low">
+                    <div class="issue-type">FORMAT - LOW</div>
+                    <div class="issue-col">review_text</div>
+                    <div class="issue-detail">Mixed case formats detected</div>
+                    <div class="issue-fix">Fix: standardize to lowercase</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Before vs After</h2>
+            <div class="before-after">
+                <div class="ba-card before">
+                    <h3>Before Cleaning</h3>
+                    <div class="ba-val">6,429</div>
+                    <p style="color:#94a3b8; font-size:0.85rem;">null values</p>
+                </div>
+                <div class="arrow">&rarr;</div>
+                <div class="ba-card after">
+                    <h3>After Cleaning</h3>
+                    <div class="ba-val">0</div>
+                    <p style="color:#94a3b8; font-size:0.85rem;">null values</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Fixes Applied</h2>
+            <div class="fixes-list">
+                <div class="fix-item"><span class="fix-check">&#10003;</span> Filled discount_applied missing with median (25.00)</div>
+                <div class="fix-item"><span class="fix-check">&#10003;</span> Filled review_text missing with mode</div>
+                <div class="fix-item"><span class="fix-check">&#10003;</span> Filled age missing with median (41.00)</div>
+                <div class="fix-item"><span class="fix-check">&#10003;</span> Filled state missing with mode (Banten)</div>
+                <div class="fix-item"><span class="fix-check">&#10003;</span> Clipped 110 outliers in unit_price</div>
+                <div class="fix-item"><span class="fix-check">&#10003;</span> Clipped 1,843 outliers in phone_number</div>
+                <div class="fix-item"><span class="fix-check">&#10003;</span> Standardized review_text to lowercase</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Tech Stack</h2>
+            <div class="tech-stack">
+                <span class="tech">Python</span>
+                <span class="tech">pandas</span>
+                <span class="tech">scikit-learn (TF-IDF)</span>
+                <span class="tech">rapidfuzz</span>
+                <span class="tech">NumPy</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="https://github.com/rpatel0022/ai-data-quality-auditor">View Source on GitHub</a>
+    </div>
+</body>
+</html>
