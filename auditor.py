@@ -1,10 +1,17 @@
 """
-AI-Powered Data Quality Auditor
+Automated Data Quality Auditor
 ================================
-Uses rule-based checks + ML-based NLP techniques to detect and fix data quality issues.
-No paid APIs — uses scikit-learn TF-IDF, rapidfuzz, and statistical methods.
+Combines rule-based validation with ML-based NLP to detect and fix data quality issues.
 
-Pipeline steps:
+Approach:
+- Rule layer: deterministic checks (nulls, types, outliers, formats, duplicates)
+- ML layer: TF-IDF cosine similarity for semantic duplicate detection,
+  fuzzy string matching for inconsistent naming in categorical fields
+- These are classical ML/NLP techniques — not LLMs. Chosen because they're
+  deterministic, fast, free, and auditable (you can explain every detection).
+  An LLM layer could be added on top for ambiguous cases.
+
+Pipeline:
 1. Profile the dataset (column types, nulls, unique counts)
 2. Rule-based checks: missing values, type mismatches, outliers, format issues
 3. ML-assisted checks: TF-IDF semantic duplicates, fuzzy naming inconsistencies
@@ -92,7 +99,12 @@ def check_type_mismatches(df):
 
 
 def check_outliers(df):
-    """Detect statistical outliers using IQR method."""
+    """Detect statistical outliers using IQR method.
+
+    Using 1.5x IQR (standard Tukey fence) because this is transactional data
+    where outliers are likely real data entry errors, not natural variation.
+    For sensor data you'd use 3x IQR to be more conservative.
+    """
     issues = []
     for col in df.select_dtypes(include=[np.number]).columns:
         values = df[col].dropna()
@@ -221,7 +233,13 @@ def check_negative_prices(df):
 # Step 3: ML-Assisted Checks (FREE — no API)
 # ---------------------------------------------------------------------------
 def ml_detect_semantic_duplicates(df):
-    """Use TF-IDF + cosine similarity to find semantically similar text entries."""
+    """Use TF-IDF + cosine similarity to find semantically similar text entries.
+
+    TF-IDF captures word importance relative to the corpus, so "120V" and "120 Volts"
+    would score high similarity even though exact string match would miss it.
+    Cosine similarity threshold of 0.7 was chosen empirically — below that we get
+    too many false positives from common product description boilerplate.
+    """
     issues = []
     text_cols = [c for c in df.select_dtypes(include=["object"]).columns
                  if df[c].nunique() > 5 and df[c].notna().sum() > 10]
