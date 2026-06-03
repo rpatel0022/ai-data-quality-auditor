@@ -1,0 +1,101 @@
+transaction_id,customer_id,transaction_date,product_id,quantity,unit_price,payment_method,discount_applied,transaction_status,review_text,name,age,gender,state,signup_date,email,phone_number,subscribe
+TX_0000003568,CUST0429,2024-12-29,WZ-802,30,448000,Credit Card,6.0,Completed,"honest seller, item as described",Hendri,41.0,Male,DI Yogyakarta,2024-08-15,margana84@example.net,8303439050,Yes
+TX_0000001323,CUST0165,2025-09-20,LE-969,31,326000,E-wallet,7.0,Completed,"honest seller, item as described",Pangeran,58.0,Male,Kepulauan Bangka Belitung,2025-09-20,ranggamaulana@example.net,8556607041,Yes
+TX_0000007976,CUST0969,2025-09-19,CR-562,22,326000,E-wallet,8.0,Completed,"honest seller, item as described",Sabrina,21.0,Female,Maluku,2025-09-19,mustikaprasasta@example.com,8779287014,Yes
+TX_0000002408,CUST0293,2025-04-23,BL-316,38,418000,Credit Card,42.0,Completed,"honest seller, item as described",Abyasa,50.0,Male,Aceh,2025-04-12,wibisonocaraka@example.com,8436160362,Yes
+TX_0000004435,CUST0537,2025-08-28,KL-203,3,15000,E-wallet,27.0,Completed,"honest seller, item as described",Wardaya,58.0,Male,Kalimantan Timur,2024-02-15,wardaya_49@example.com,220775142614,No
+TX_0000005447,CUST0661,2025-09-22,QQ-301,19,321000,Cash,4.0,Completed,"honest seller, item as described",Puji,32.0,Female,DI Yogyakarta,2025-09-05,puji_62@example.com,82263520270,Yes
+TX_0000005447,CUST0661,2025-09-22,QQ-301,19,321000,Cash,4.0,Completed,"honest seller, item as described",Puji,32.0,Female,DI Yogyakarta,2025-09-05,puji_62@example.com,82263520270,Yes
+TX_0000003024,CUST0370,2025-02-10,GW-908,21,473000,Bank Transfer,40.0,Completed,"honest seller, item as described",Kiandra,55.0,Female,Banten,2025-02-07,572kiandra@example.com,8772086268,No
+TX_0000001534,CUST0193,2025-06-19,GF-891,7,329000,Credit Card,12.0,Completed,very slow shipping,Kasiyah,45.0,Female,Sulawesi Barat,2025-04-28,537kasiyah@example.com,8096683515,No
+TX_0000000264,CUST0033,2025-01-16,ON-125,40,105000,Debit Card,40.0,Completed,"honest seller, item as described",Raden,47.0,Male,Kalimantan Selatan,2023-11-16,raden_6@example.com,8448856016,Yes
+TX_0000000744,CUST0093,2024-10-27,EC-962,30,161000,Debit Card,16.0,Completed,"honest seller, item as described",Syahrini,34.0,Female,Banten,2024-07-14,hariputra@example.com,87412241378,Yes
+TX_0000003860,CUST0462,2025-08-28,IM-080,19,187000,Bank Transfer,47.0,Completed,"honest seller, item as described",Anita,47.0,Female,Banten,2025-06-23,anita_19@example.com,818292192,No
+TX_0000007460,CUST0904,2024-09-30,WD-572,15,368000,Bank Transfer,26.0,Completed,"honest seller, item as described",Dewi,28.0,Female,Sumatera Utara,2024-04-03,jmelani@example.com,83567852065,Yes
+TX_0000005763,CUST0696,2025-07-23,BC-170,40,39000,Cash,46.0,Completed,"honest seller, item as described",Melinda,65.0,Female,Jambi,2024-01-05,sinagamahesa@example.org,82287594507,Yes
+TX_0000004195,CUST0508,2024-11-28,ZK-154,24,160000,Cash,46.0,Completed,"honest seller, item as described",Cindy,31.0,Female,Aceh,2024-08-26,cindy_92@example.com,8157123413,Yes
+TX_0000004127,CUST0501,2025-01-03,QJ-620,24,103000,Debit Card,0.0,Completed,a bit expensive but worth the quality,Rizki,33.0,Male,Kalimantan Tengah,2024-11-23,cinthiaadriansyah@example.org,816417363,Yes
+TX_0000001704,CUST0210,2025-01-26,SX-681,32,176000,Cash,25.0,Completed,"honest seller, item as described",Gamanto,63.0,Male,Jawa Tengah,2023-10-12,gamanto891@example.com,80338818657,Yes
+TX_0000006700,CUST0811,2025-09-07,DY-596,20,211000,E-wallet,12.0,Completed,"amazing product, exceeds expectations",Nilam,48.0,Female,Kalimantan Barat,2025-08-02,hasnauwais@example.org,82375631588,Yes
+TX_0000008049,CUST0980,2025-03-20,FA-173,7,133000,Credit Card,46.0,Completed,"honest seller, item as described",Michelle,18.0,Female,Sumatera Barat,2024-07-09,668michelle@example.com,8060027190,No
+TX_0000005168,CUST0624,2024-10-25,CS-132,31,390000,Cash,25.0,Completed,"honest seller, item as described",Saiful,58.0,Male,Kepulauan Bangka Belitung,2024-04-10,xpradana@example.org,81432596102,Yes
+TX_0000005499,CUST0667,2025-03-12,GD-567,37,27000,E-wallet,26.0,Pending,"honest seller, item as described",Balijan,25.0,Male,Gorontalo,2024-11-27,ksuryatmi@example.net,220775142614,Yes
+TX_0000004782,CUST0576,2025-03-11,MN-198,33,281000,Cash,44.0,Completed,product matches description,Paulin,45.0,Female,Kalimantan Timur,2023-11-11,mulyaniendra@example.net,8258644049,Yes
+TX_0000006422,CUST0777,2025-08-31,NX-179,27,392000,Credit Card,6.0,Pending,"honest seller, item as described",Icha,62.0,Female,Kalimantan Utara,2024-12-11,yhalimah@example.net,81345990329,Yes
+TX_0000005181,CUST0626,2025-01-16,SV-880,25,148000,E-wallet,1.0,Completed,"honest seller, item as described",Ida,21.0,Female,Kalimantan Selatan,2024-08-21,usadamila@example.org,89782150978,Yes
+TX_0000004837,CUST0583,2025-03-22,EK-900,21,321000,Credit Card,5.0,Completed,"honest seller, item as described",Gilda,53.0,Female,Aceh,2023-12-05,jumarisafitri@example.org,220775142614,Yes
+TX_0000000801,CUST0101,2024-11-22,KK-056,10,163000,Bank Transfer,36.0,Completed,"honest seller, item as described",Unjani,44.0,Female,Bengkulu,2024-08-25,pangestu31@example.com,220775142614,No
+TX_0000004662,CUST0559,2025-07-23,WJ-796,34,421000,Credit Card,10.0,Completed,"honest seller, item as described",Chandra,32.0,Male,Riau,2025-06-15,445chandra@example.com,841150898,Yes
+TX_0000004886,CUST0588,2024-04-11,AX-943,8,378000,Cash,31.0,Completed,"item damaged upon arrival, disappointed",Elisa,62.0,Female,Jawa Timur,2023-10-12,sidiqmaryadi@example.org,220775142614,No
+TX_0000005585,CUST0679,2025-09-22,IU-155,9,371000,Credit Card,35.0,Completed,"honest seller, item as described",Jayadi,46.0,Male,Kepulauan Bangka Belitung,2025-09-20,998jayadi@example.com,84642406422,No
+TX_0000005585,CUST0679,2025-09-22,IU-155,9,371000,Credit Card,35.0,Completed,"honest seller, item as described",Jayadi,46.0,Male,Kepulauan Bangka Belitung,2025-09-20,998jayadi@example.com,84642406422,No
+TX_0000008101,CUST0986,2025-09-10,QZ-213,31,314000,Bank Transfer,37.0,Completed,"honest seller, item as described",Wisnu,54.0,Male,Sulawesi Tengah,2025-06-25,dnurdiyanti@example.org,87006634411,Yes
+TX_0000002132,CUST0261,2025-09-04,AK-139,24,408000,E-wallet,14.0,Completed,won't buy here again,Zahra,59.0,Female,Sumatera Utara,2025-04-07,zahra57@example.com,8886360522,Yes
+TX_0000003617,CUST0433,2025-03-17,EK-222,24,482000,E-wallet,22.0,Completed,"honest seller, item as described",Jabal,52.0,Male,Gorontalo,2023-12-03,haryantodipa@example.org,806512185,Yes
+TX_0000005846,CUST0705,2025-03-02,QC-773,24,381000,E-wallet,3.0,Completed,"honest seller, item as described",Karen,37.0,Female,Jawa Timur,2024-08-10,535karen@example.com,220775142614,Yes
+TX_0000006418,CUST0776,2024-12-17,JN-712,30,483000,E-wallet,5.0,Completed,response was slow but item is good,Nilam,35.0,Female,Bali,2024-06-22,drahmawati@example.net,8060855706,Yes
+TX_0000006385,CUST0772,2025-03-14,IB-179,20,286000,Bank Transfer,43.0,Completed,"honest seller, item as described",Tania,41.0,Female,Nusa Tenggara Timur,2024-05-03,tania413@example.com,220775142614,No
+TX_0000005411,CUST0657,2025-09-08,BR-118,26,475000,Debit Card,41.0,Completed,"honest seller, item as described",Kartika,24.0,Female,Jawa Barat,2025-07-15,salwa82@example.com,888762476,Yes
+TX_0000005195,CUST0627,2025-02-08,TG-116,19,164000,Debit Card,5.0,Completed,"item arrived quickly, good condition",Jelita,22.0,Female,Riau,2023-11-30,jelita_54@example.com,8407248064,Yes
+TX_0000005195,CUST0627,2025-02-08,TG-116,19,164000,Debit Card,5.0,Completed,"item arrived quickly, good condition",Jelita,22.0,Female,Riau,2023-11-30,jelita_54@example.com,8407248064,Yes
+TX_0000007989,CUST0970,2024-11-03,DL-645,17,387000,E-wallet,20.0,Completed,"honest seller, item as described",Gawati,45.0,Female,DI Yogyakarta,2025-02-21,gawati227@example.com,85186013271,Yes
+TX_0000005707,CUST0693,2025-02-06,XQ-134,7,152000,Credit Card,28.0,Completed,"honest seller, item as described",Cakrabirawa,27.0,Male,Banten,2025-02-18,asaragih@example.net,895774125,No
+TX_0000006792,CUST0823,2024-12-12,OS-728,24,393000,Bank Transfer,47.0,Completed,"honest seller, item as described",Drajat,48.0,Male,Kalimantan Timur,2023-12-27,setiawannasim@example.net,82065914060,No
+TX_0000003952,CUST0473,2024-11-27,XW-869,12,241000,Debit Card,47.0,Cancelled,"honest seller, item as described",Tasnim,41.0,Male,Banten,2024-06-23,tasnim_1@example.com,8906479961,Yes
+TX_0000006907,CUST0838,2025-02-25,MM-874,32,332000,Debit Card,16.0,Cancelled,"honest seller, item as described",Ratih,30.0,Female,Sumatera Utara,2023-09-25,fitria10@example.com,8559069198,Yes
+TX_0000005598,CUST0680,2024-10-09,MA-854,20,170000,Debit Card,42.0,Completed,"defective item, please replace",Tania,52.0,Female,Kalimantan Selatan,2024-09-06,galionowasita@example.net,85024295384,No
+TX_0000007275,CUST0882,2025-04-17,TL-807,12,284000,Cash,27.0,Completed,"honest seller, item as described",Among,33.0,Male,Maluku,2024-12-20,among467@example.com,81723450913,Yes
+TX_0000003379,CUST0409,2025-08-10,FX-130,28,159000,E-wallet,42.0,Completed,"quality matches the price, decent enough",Prasetyo,34.0,Male,Bali,2025-08-07,819prasetyo@example.com,831149234,Yes
+TX_0000007202,CUST0874,2025-09-21,QZ-183,26,249000,Credit Card,28.0,Completed,bit overpriced but quality is okay,Calista,57.0,Female,Sulawesi Selatan,2025-04-07,calista731@example.com,220775142614,Yes
+TX_0000007901,CUST0961,2025-09-16,ZH-075,27,354000,Bank Transfer,4.0,Cancelled,price matches quality,Dewi,24.0,Female,Kepulauan Bangka Belitung,2025-04-18,suryonohana@example.net,896548600,Yes
+TX_0000002610,CUST0318,2024-10-02,NP-002,21,247000,Bank Transfer,48.0,Completed,won't buy here again,Tina,40.0,Female,Banten,2024-02-05,ykuswandari@example.org,84458373349,No
+TX_0000001143,CUST0140,2025-08-10,ER-793,16,107000,Debit Card,34.0,Completed,"honest seller, item as described",Bambang,63.0,Male,Sumatera Utara,2025-03-30,rahmi71@example.org,220775142614,No
+TX_0000005120,CUST0619,2025-01-17,MM-626,38,146000,Debit Card,25.0,Completed,"honest seller, item as described",Tirta,60.0,Male,Sulawesi Tenggara,2024-09-20,legawawacana@example.net,884902099,Yes
+TX_0000003034,CUST0371,2025-01-18,LX-303,25,266000,E-wallet,46.0,Completed,"honest seller, item as described",Kenes,32.0,Male,Kepulauan Riau,2025-01-26,kenes_38@example.com,842550471,No
+TX_0000004608,CUST0554,2024-10-22,TT-468,18,294000,Debit Card,13.0,Completed,"honest seller, item as described",Jabal,57.0,Male,Kalimantan Utara,2024-11-09,lutami@example.org,8876760687,Yes
+TX_0000006848,CUST0831,2024-10-21,VH-487,17,405000,Cash,17.0,Completed,"honest seller, item as described",Kasiyah,56.0,Female,Kalimantan Barat,2023-11-03,novamahendra@example.com,871439104,Yes
+TX_0000000504,CUST0065,2025-03-06,PJ-943,15,288000,Credit Card,29.0,Completed,"honest seller, item as described",Perkasa,26.0,Male,Kalimantan Timur,2025-01-03,estionoprasetya@example.org,8243403277,No
+TX_0000000234,CUST0031,2025-05-15,MP-128,8,392000,Credit Card,19.0,Completed,"seller communicative, item is good",Salimah,60.0,Female,Kalimantan Barat,2025-04-10,rafid56@example.org,8186096425,No
+TX_0000000519,CUST0067,2024-10-04,JC-536,8,34000,E-wallet,33.0,Completed,"poor product, requesting refund",Anita,49.0,Female,DKI Jakarta,2024-10-07,anita787@example.com,88953352346,No
+TX_0000002081,CUST0255,2024-10-03,JR-931,1,85000,Cash,12.0,Completed,"product not original, very disappointed",Kurnia,51.0,Male,Maluku,2024-12-18,kurnia477@example.com,8116801400,No
+TX_0000004546,CUST0548,2025-02-02,EG-848,34,377000,Credit Card,15.0,Completed,"premium quality, very satisfied",Respati,52.0,Male,Sumatera Utara,2024-04-01,respati_80@example.com,86801676795,Yes
+TX_0000003756,CUST0451,2025-08-16,VB-143,15,119000,Credit Card,46.0,Completed,"honest seller, item as described",Johan,28.0,Male,Sulawesi Tenggara,2025-08-16,lantar69@example.net,220775142614,No
+TX_0000003380,CUST0409,2025-08-09,CY-687,38,169000,Cash,0.0,Completed,"honest seller, item as described",Prasetyo,34.0,Male,Bali,2025-08-07,819prasetyo@example.com,831149234,Yes
+TX_0000006382,CUST0772,2024-12-22,TZ-942,19,197000,Bank Transfer,6.0,Completed,"honest seller, item as described",Tania,41.0,Female,Nusa Tenggara Timur,2024-05-03,tania413@example.com,220775142614,No
+TX_0000006386,CUST0772,2025-01-05,PZ-799,21,339000,Cash,34.0,Completed,"item damaged upon arrival, disappointed",Tania,41.0,Female,Nusa Tenggara Timur,2024-05-03,tania413@example.com,220775142614,No
+TX_0000005669,CUST0689,2025-03-31,FB-947,16,247000,Bank Transfer,6.0,Cancelled,"honest seller, item as described",Wahyu,55.0,Male,Kalimantan Tengah,2024-07-20,wahyu_93@example.com,882315176,Yes
+TX_0000006301,CUST0764,2025-03-23,XY-721,13,356000,Credit Card,5.0,Refunded,"amazing product, highly recommended",Irfan,42.0,Male,Sulawesi Barat,2024-12-16,irfan_91@example.com,220775142614,No
+TX_0000002571,CUST0315,2024-11-20,DR-610,37,227000,Bank Transfer,37.0,Completed,a bit overpriced in my opinion,Ihsan,50.0,Male,Sumatera Utara,2024-10-18,ihsan_30@example.com,888204300,Yes
+TX_0000007013,CUST0853,2024-12-01,HT-475,20,142000,Cash,35.0,Completed,"great product, will order again",Zelda,21.0,Female,Bengkulu,2024-03-27,oskardabukke@example.org,815777376,Yes
+TX_0000008085,CUST0983,2024-11-14,UD-120,16,368000,Debit Card,1.0,Completed,"honest seller, item as described",Puput,35.0,Female,Sulawesi Utara,2024-07-30,cahyantoputra@example.com,220775142614,Yes
+TX_0000006299,CUST0763,2024-11-06,RD-182,11,47000,Debit Card,23.0,Cancelled,"quality product, attractive packaging",Karman,29.0,Male,Jawa Barat,2024-03-06,818karman@example.com,86039828212,No
+TX_0000002946,CUST0361,2025-01-28,QX-910,8,332000,Cash,16.0,Completed,"honest seller, item as described",Dewi,47.0,Female,Jambi,2024-07-25,vsantoso@example.com,8778517554,No
+TX_0000000749,CUST0094,2024-11-24,XS-812,23,337000,Credit Card,25.0,Completed,"item matches picture, very satisfied",Respati,26.0,Male,Kalimantan Utara,2023-10-06,aryanimartani@example.net,8432024958,No
+TX_0000002302,CUST0281,2024-11-28,MS-162,3,99000,Cash,47.0,Completed,"cheap price, decent quality",Latika,42.0,Female,Kepulauan Riau,2025-02-26,bakidin99@example.com,8873633240,No
+TX_0000005040,CUST0860,2025-09-11,HA-620,15,313000,Bank Transfer,39.0,Refunded,"honest seller, item as described",Winda,38.0,Female,Banten,2025-08-09,549winda@example.com,873339264,Yes
+TX_0000005040,CUST0860,2025-09-11,HA-620,15,313000,Bank Transfer,39.0,Refunded,"honest seller, item as described",Winda,38.0,Female,Banten,2025-08-09,549winda@example.com,873339264,Yes
+TX_0000005158,CUST0623,2024-10-29,XI-589,38,375000,E-wallet,23.0,Completed,"honest seller, item as described",Yuliana,50.0,Female,Banten,2024-07-20,dewimegantara@example.net,8627817507,Yes
+TX_0000003258,CUST0394,2024-11-20,GJ-675,22,168000,Credit Card,1.0,Cancelled,"honest seller, item as described",Suci,56.0,Female,Kalimantan Utara,2025-02-28,suci803@example.com,89121742745,No
+TX_0000005744,CUST0627,2025-03-25,KK-442,30,182000,Bank Transfer,31.0,Completed,"honest seller, item as described",Jelita,22.0,Female,Riau,2023-11-30,jelita_54@example.com,8407248064,Yes
+TX_0000005744,CUST0627,2025-03-25,KK-442,30,182000,Bank Transfer,31.0,Completed,"honest seller, item as described",Jelita,22.0,Female,Riau,2023-11-30,jelita_54@example.com,8407248064,Yes
+TX_0000006320,CUST0766,2025-07-13,TI-999,26,340000,Credit Card,12.0,Completed,response was slow but item is good,Putri,60.0,Female,Kalimantan Selatan,2025-07-10,halimahcager@example.org,8869484756,Yes
+TX_0000001619,CUST0202,2024-07-30,FN-243,4,11000,Credit Card,25.0,Cancelled,"honest seller, item as described",Kayla,51.0,Female,Jawa Timur,2024-01-01,785kayla@example.com,896148976,No
+TX_0000003521,CUST0425,2024-12-06,MZ-493,37,152000,Credit Card,1.0,Completed,"honest seller, item as described",Eluh,41.0,Male,DI Yogyakarta,2023-12-25,jpalastri@example.com,8586798739,Yes
+TX_0000007667,CUST0933,2024-10-25,AD-353,9,458000,Credit Card,25.0,Completed,"honest seller, item as described",Wadi,54.0,Male,Sumatera Barat,2024-11-22,813wadi@example.com,8634585677,No
+TX_0000001296,CUST0161,2025-08-28,LF-244,23,222000,Cash,43.0,Completed,"honest seller, item as described",Narji,23.0,Male,Jambi,2025-08-14,safitriqueen@example.net,220775142614,Yes
+TX_0000004016,CUST0482,2024-12-04,XF-771,1,413000,Credit Card,25.0,Completed,"honest seller, item as described",Nadine,18.0,Female,Jawa Timur,2024-06-10,mustofa70@example.com,8534366486,No
+TX_0000006181,CUST0748,2024-10-02,WD-960,34,244000,E-wallet,25.0,Completed,"honest seller, item as described",Tantri,50.0,Female,Banten,2024-08-18,tantri_19@example.com,8862206790,Yes
+TX_0000001026,CUST0126,2025-03-27,FT-037,23,273000,Bank Transfer,27.0,Completed,"honest seller, item as described",Lili,36.0,Female,Sulawesi Tenggara,2024-11-30,71lili@example.com,8056814408,Yes
+TX_0000005442,CUST0660,2025-09-10,CB-458,3,408000,Bank Transfer,3.0,Completed,bit overpriced but quality is okay,Ade,30.0,Female,Papua,2024-02-02,978ade@example.com,82838046583,No
+TX_0000004247,CUST0514,2024-10-31,FY-405,39,404000,E-wallet,40.0,Completed,"honest seller, item as described",Adinata,60.0,Male,Aceh,2023-12-11,bgunawan@example.net,8287301073,Yes
+TX_0000004247,CUST0514,2024-10-31,FY-405,39,404000,E-wallet,40.0,Completed,"honest seller, item as described",Adinata,60.0,Male,Aceh,2023-12-11,bgunawan@example.net,8287301073,Yes
+TX_0000004505,CUST0543,2025-03-26,IG-535,2,200000,Cash,29.0,Completed,"honest seller, item as described",Edi,51.0,Male,Jawa Barat,2025-03-08,yolandapandu@example.org,893771273,No
+TX_0000003483,CUST0421,2025-03-22,XC-063,4,201000,Bank Transfer,32.0,Completed,"honest seller, item as described",Maryanto,65.0,Male,Papua Barat,2025-02-12,988maryanto@example.com,220775142614,Yes
+TX_0000000458,CUST0060,2024-10-03,XA-186,15,473000,Cash,12.0,Completed,"honest seller, item as described",Devi,63.0,Female,Kepulauan Bangka Belitung,2024-05-29,wakiman15@example.org,220775142614,No
+TX_0000006046,CUST0730,2025-01-23,HZ-277,35,60000,Credit Card,13.0,Pending,"honest seller, item as described",Galur,38.0,Male,Sumatera Selatan,2024-09-18,galur_37@example.com,80496762480,Yes
+TX_0000003685,CUST0441,2025-07-02,LY-934,18,45000,Bank Transfer,34.0,Completed,shipping a bit slow but good item,Ghani,41.0,Male,Papua,2025-05-21,212ghani@example.com,8015760516,No
+TX_0000000034,CUST0005,2025-09-15,ON-514,15,288000,Debit Card,14.0,Completed,"honest seller, item as described",Taufik,43.0,Male,Kepulauan Riau,2025-08-04,taufik_87@example.com,81034538051,Yes
+TX_0000001200,CUST0149,2025-01-10,FJ-836,34,214000,Cash,5.0,Cancelled,"product meets expectations, will buy again",Puti,45.0,Female,Sulawesi Selatan,2025-01-14,790puti@example.com,220775142614,Yes
+TX_0000004871,CUST0586,2024-10-06,RI-549,10,197000,Credit Card,39.0,Completed,"honest seller, item as described",Ihsan,35.0,Male,Papua,2024-06-10,wirda13@example.net,220775142614,No
+TX_0000001616,CUST0202,2024-12-24,ZZ-640,13,291000,E-wallet,19.0,Completed,"honest seller, item as described",Kayla,51.0,Female,Jawa Timur,2024-01-01,785kayla@example.com,896148976,No
+TX_0000002089,CUST0256,2025-01-11,VZ-771,8,309000,Cash,18.0,Cancelled,"honest seller, item as described",Baktiono,35.0,Male,DKI Jakarta,2024-11-17,ksinaga@example.net,220775142614,No

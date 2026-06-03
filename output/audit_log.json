@@ -1,0 +1,490 @@
+{
+  "datasets": [
+    "customers.csv",
+    "transactions.csv"
+  ],
+  "rows": 8388,
+  "issues_found": 12,
+  "issues": [
+    {
+      "type": "MISSING",
+      "column": "discount_applied",
+      "severity": "LOW",
+      "detail": "440 missing values (5.2%)",
+      "suggested_fix": "impute_median"
+    },
+    {
+      "type": "MISSING",
+      "column": "review_text",
+      "severity": "HIGH",
+      "detail": "5031 missing values (60.0%)",
+      "suggested_fix": "impute_mode"
+    },
+    {
+      "type": "MISSING",
+      "column": "age",
+      "severity": "LOW",
+      "detail": "484 missing values (5.8%)",
+      "suggested_fix": "impute_median"
+    },
+    {
+      "type": "MISSING",
+      "column": "state",
+      "severity": "LOW",
+      "detail": "474 missing values (5.7%)",
+      "suggested_fix": "impute_mode"
+    },
+    {
+      "type": "OUTLIER",
+      "column": "unit_price",
+      "severity": "LOW",
+      "detail": "110 outliers (1.3%) outside [-155000.00, 725000.00]",
+      "suggested_fix": "clip_to_iqr_bounds",
+      "bounds": {
+        "lower": -155000.0,
+        "upper": 725000.0
+      }
+    },
+    {
+      "type": "OUTLIER",
+      "column": "phone_number",
+      "severity": "HIGH",
+      "detail": "1843 outliers (22.0%) outside [-131046569618.00, 220775142614.00]",
+      "suggested_fix": "clip_to_iqr_bounds",
+      "bounds": {
+        "lower": -131046569618.0,
+        "upper": 220775142614.0
+      }
+    },
+    {
+      "type": "FORMAT",
+      "column": "review_text",
+      "severity": "LOW",
+      "detail": "Mixed case formats: UPPER=0, lower=4, Title=0",
+      "suggested_fix": "standardize_to_lower"
+    },
+    {
+      "type": "DUPLICATE",
+      "column": "ALL_ROWS",
+      "severity": "MEDIUM",
+      "detail": "189 exact duplicate rows (2.3%)",
+      "suggested_fix": "drop_duplicates"
+    },
+    {
+      "type": "AI_SEMANTIC_DUPLICATE",
+      "column": "transaction_date",
+      "severity": "MEDIUM",
+      "detail": "192 semantically similar value pairs detected via TF-IDF",
+      "sample_pairs": [
+        [
+          "2025-04-23",
+          "2025-07-23",
+          0.706
+        ],
+        [
+          "2025-02-10",
+          "2024-10-02",
+          0.881
+        ],
+        [
+          "2025-02-10",
+          "2025-02-02",
+          0.715
+        ],
+        [
+          "2025-01-16",
+          "2025-08-16",
+          0.707
+        ],
+        [
+          "2025-07-23",
+          "2025-03-23",
+          0.703
+        ]
+      ],
+      "suggested_fix": "review_and_merge_similar_values"
+    },
+    {
+      "type": "AI_NAMING",
+      "column": "payment_method",
+      "severity": "MEDIUM",
+      "detail": "1 naming inconsistency groups in 'payment_method'",
+      "groups": [
+        {
+          "original": "Credit Card",
+          "similar_to": [
+            "Debit Card"
+          ],
+          "suggested_standard": "Credit Card"
+        }
+      ],
+      "suggested_fix": "standardize_similar_names"
+    },
+    {
+      "type": "AI_NAMING",
+      "column": "review_text",
+      "severity": "MEDIUM",
+      "detail": "6 naming inconsistency groups in 'review_text'",
+      "groups": [
+        {
+          "original": "A bit expensive but worth the quality",
+          "similar_to": [
+            "A bit expensive but satisfied with result"
+          ],
+          "suggested_standard": "A bit expensive but worth the quality"
+        },
+        {
+          "original": "Cheap price, decent quality",
+          "similar_to": [
+            "Competitive price, decent quality"
+          ],
+          "suggested_standard": "Cheap price, decent quality"
+        },
+        {
+          "original": "Standard quality for the price",
+          "similar_to": [
+            "Poor quality for this price"
+          ],
+          "suggested_standard": "Standard quality for the price"
+        },
+        {
+          "original": "High quality product, recommended",
+          "similar_to": [
+            "High quality product"
+          ],
+          "suggested_standard": "High quality product, recommended"
+        },
+        {
+          "original": "Doesn't meet expectations",
+          "similar_to": [
+            "Doesn't match my expectations",
+            "Size doesn't match expectations"
+          ],
+          "suggested_standard": "Doesn't meet expectations"
+        },
+        {
+          "original": "Safe packaging, not damaged",
+          "similar_to": [
+            "Safe shipping, nothing damaged"
+          ],
+          "suggested_standard": "Safe packaging, not damaged"
+        }
+      ],
+      "suggested_fix": "standardize_similar_names"
+    },
+    {
+      "type": "AI_NAMING",
+      "column": "state",
+      "severity": "MEDIUM",
+      "detail": "4 naming inconsistency groups in 'state'",
+      "groups": [
+        {
+          "original": "Kalimantan Selatan",
+          "similar_to": [
+            "Kalimantan Utara"
+          ],
+          "suggested_standard": "Kalimantan Selatan"
+        },
+        {
+          "original": "Sulawesi Tengah",
+          "similar_to": [
+            "Sulawesi Tenggara"
+          ],
+          "suggested_standard": "Sulawesi Tengah"
+        },
+        {
+          "original": "Jawa Barat",
+          "similar_to": [
+            "Papua Barat"
+          ],
+          "suggested_standard": "Jawa Barat"
+        },
+        {
+          "original": "Sulawesi Utara",
+          "similar_to": [
+            "Sulawesi Tenggara"
+          ],
+          "suggested_standard": "Sulawesi Utara"
+        }
+      ],
+      "suggested_fix": "standardize_similar_names"
+    }
+  ],
+  "fixes_applied": [
+    "Filled discount_applied missing with median (25.00)",
+    "Filled review_text missing with mode (Honest seller, item as described)",
+    "Filled age missing with median (41.00)",
+    "Filled state missing with mode (Banten)",
+    "Clipped 110 outliers in unit_price",
+    "Clipped 1843 outliers in phone_number",
+    "Standardized review_text to lowercase"
+  ],
+  "before_after": {
+    "rows": {
+      "before": 8388,
+      "after": 8388
+    },
+    "nulls": {
+      "before": 6429,
+      "after": 0
+    },
+    "null_reduction_pct": 100.0
+  },
+  "summary": "Data Quality Score: 7.8/10\n\n- Dataset completeness: 95.7% (6,429 null values across 150,984 cells)\n- Issues found: 12 total (2 HIGH, 5 MEDIUM)\n- Issue breakdown: {\"MISSING\": 4, \"OUTLIER\": 2, \"FORMAT\": 1, \"DUPLICATE\": 1, \"AI_SEMANTIC_DUPLICATE\": 1, \"AI_NAMING\": 3}\n- Most critical: Fix missing values and outliers first\n- Recommendation: Moderate cleaning needed",
+  "profile": {
+    "transaction_id": {
+      "dtype": "object",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "unique_count": 8199,
+      "sample_values": [
+        "TX_0000003568",
+        "TX_0000001323",
+        "TX_0000007976",
+        "TX_0000002408",
+        "TX_0000004435"
+      ]
+    },
+    "customer_id": {
+      "dtype": "object",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "unique_count": 1000,
+      "sample_values": [
+        "CUST0429",
+        "CUST0165",
+        "CUST0969",
+        "CUST0293",
+        "CUST0537"
+      ]
+    },
+    "transaction_date": {
+      "dtype": "object",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "unique_count": 563,
+      "sample_values": [
+        "2024-12-29",
+        "2025-09-20",
+        "2025-09-19",
+        "2025-04-23",
+        "2025-08-28"
+      ]
+    },
+    "product_id": {
+      "dtype": "object",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "unique_count": 8136,
+      "sample_values": [
+        "WZ-802",
+        "LE-969",
+        "CR-562",
+        "BL-316",
+        "KL-203"
+      ]
+    },
+    "quantity": {
+      "dtype": "int64",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "unique_count": 40,
+      "sample_values": [
+        "30",
+        "31",
+        "22",
+        "38",
+        "3"
+      ],
+      "mean": 22.38,
+      "std": 10.06,
+      "min": 1.0,
+      "max": 40.0
+    },
+    "unit_price": {
+      "dtype": "int64",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "unique_count": 633,
+      "sample_values": [
+        "448000",
+        "326000",
+        "326000",
+        "418000",
+        "15000"
+      ],
+      "mean": 294062.92,
+      "std": 187079.01,
+      "min": 100.0,
+      "max": 2000000.0
+    },
+    "payment_method": {
+      "dtype": "object",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "unique_count": 5,
+      "sample_values": [
+        "Credit Card",
+        "E-wallet",
+        "E-wallet",
+        "Credit Card",
+        "E-wallet"
+      ]
+    },
+    "discount_applied": {
+      "dtype": "float64",
+      "null_count": 440,
+      "null_pct": 5.25,
+      "unique_count": 51,
+      "sample_values": [
+        "6.0",
+        "7.0",
+        "8.0",
+        "42.0",
+        "27.0"
+      ],
+      "mean": 25.0,
+      "std": 14.63,
+      "min": 0.0,
+      "max": 50.0
+    },
+    "transaction_status": {
+      "dtype": "object",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "unique_count": 4,
+      "sample_values": [
+        "Completed",
+        "Completed",
+        "Completed",
+        "Completed",
+        "Completed"
+      ]
+    },
+    "review_text": {
+      "dtype": "object",
+      "null_count": 5031,
+      "null_pct": 59.98,
+      "unique_count": 81,
+      "sample_values": [
+        "Very slow shipping",
+        "A bit expensive but worth the quality",
+        "Amazing product, exceeds expectations",
+        "Product matches description",
+        "Honest seller, item as described"
+      ]
+    },
+    "name": {
+      "dtype": "object",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "unique_count": 500,
+      "sample_values": [
+        "Hendri",
+        "Pangeran",
+        "Sabrina",
+        "Abyasa",
+        "Wardaya"
+      ]
+    },
+    "age": {
+      "dtype": "float64",
+      "null_count": 484,
+      "null_pct": 5.77,
+      "unique_count": 48,
+      "sample_values": [
+        "58.0",
+        "21.0",
+        "50.0",
+        "58.0",
+        "32.0"
+      ],
+      "mean": 41.2,
+      "std": 13.73,
+      "min": 18.0,
+      "max": 65.0
+    },
+    "gender": {
+      "dtype": "object",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "unique_count": 2,
+      "sample_values": [
+        "Male",
+        "Male",
+        "Female",
+        "Male",
+        "Male"
+      ]
+    },
+    "state": {
+      "dtype": "object",
+      "null_count": 474,
+      "null_pct": 5.65,
+      "unique_count": 34,
+      "sample_values": [
+        "DI Yogyakarta",
+        "Kepulauan Bangka Belitung",
+        "Maluku",
+        "Aceh",
+        "Kalimantan Timur"
+      ]
+    },
+    "signup_date": {
+      "dtype": "object",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "unique_count": 537,
+      "sample_values": [
+        "2024-08-15",
+        "2025-09-20",
+        "2025-09-19",
+        "2025-04-12",
+        "2024-02-15"
+      ]
+    },
+    "email": {
+      "dtype": "object",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "unique_count": 1000,
+      "sample_values": [
+        "margana84@example.net",
+        "ranggamaulana@example.net",
+        "mustikaprasasta@example.com",
+        "wibisonocaraka@example.com",
+        "wardaya_49@example.com"
+      ]
+    },
+    "phone_number": {
+      "dtype": "int64",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "unique_count": 1000,
+      "sample_values": [
+        "8303439050",
+        "8556607041",
+        "8779287014",
+        "8436160362",
+        "828349372342"
+      ],
+      "mean": 208874299660.56,
+      "std": 339652835520.52,
+      "min": 800197278.0,
+      "max": 899529360455.0
+    },
+    "subscribe": {
+      "dtype": "object",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "unique_count": 2,
+      "sample_values": [
+        "Yes",
+        "Yes",
+        "Yes",
+        "Yes",
+        "No"
+      ]
+    }
+  }
+}
